@@ -1,0 +1,29 @@
+h1 {
+    widht: 500px;
+    text-align:center;
+
+
+       }
+
+form{
+        widht: 500px;
+        text-align:center;
+        background-color: #2fbcbc
+        border: 1px solid black;
+        box-sizing: border-box;
+        padding: 25px;
+        margin-bottom: 50px;
+
+        }
+
+#map {
+        height: 100%;
+      }
+
+
+      /* Makes the sample page fill the window. */
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
