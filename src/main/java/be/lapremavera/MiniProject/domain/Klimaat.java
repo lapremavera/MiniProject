@@ -15,6 +15,10 @@ public class Klimaat {
 
     private int regenHoeveelheid;
 
+    public Klimaat() {
+
+    }
+
     public Klimaat(String naam, int regenHoeveelheid) {
         this.naam = naam;
         this.regenHoeveelheid = regenHoeveelheid;

@@ -14,15 +14,15 @@ public class Plantensoort {
     @Column(nullable = false)
     private String naamSoort;
     @Column
-    private int maxHoogte;
+    private Integer maxHoogte;
     @Column
-    private int duurTotPluk;
+    private Integer duurTotPluk;
     @Column
     private String oogsttijd;
     @Column
     private String beschrijvingPlantsoort;
     @Column
-    private int plantAfstand;
+    private Integer plantAfstand;
     @Column
     private String groeiVoorwaarden;
 
@@ -54,11 +54,11 @@ public class Plantensoort {
         this.beschrijvingPlantsoort = beschrijvingPlantsoort;
     }
 
-    public int getPlantAfstand() {
+    public Integer getPlantAfstand() {
         return plantAfstand;
     }
 
-    public void setPlantAfstand(int plantAfstand) {
+    public void setPlantAfstand(Integer plantAfstand) {
         this.plantAfstand = plantAfstand;
     }
 
@@ -93,19 +93,19 @@ public class Plantensoort {
         this.naamSoort = naamSoort;
     }
 
-    public int getMaxHoogte() {
+    public Integer getMaxHoogte() {
         return maxHoogte;
     }
 
-    public void setMaxHoogte(int maxHoogte) {
+    public void setMaxHoogte(Integer maxHoogte) {
         this.maxHoogte = maxHoogte;
     }
 
-    public int getDuurTotPluk() {
+    public Integer getDuurTotPluk() {
         return duurTotPluk;
     }
 
-    public void setDuurTotPluk(int duurTotPluk) {
+    public void setDuurTotPluk(Integer duurTotPluk) {
         this.duurTotPluk = duurTotPluk;
     }
 
