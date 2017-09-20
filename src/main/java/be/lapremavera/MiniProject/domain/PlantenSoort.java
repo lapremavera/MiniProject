@@ -2,10 +2,11 @@ package be.lapremavera.MiniProject.domain;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class PlantenSoort {
-
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -20,6 +21,18 @@ public class PlantenSoort {
     private String oogsttijd;
     @Column
     private String beschrijvingPlantSoort;
+
+    @OneToMany
+    private List<Grondsoort> grondsoorten = new ArrayList<>();
+
+    @ElementCollection
+    @CollectionTable(name = "planten_soort_orientaties")
+    @Column(name = "orientatie")
+    @Enumerated(EnumType.STRING)
+    private List<Orientatie> orientaties = new ArrayList<>();
+
+    @OneToMany
+    private List<Klimaat> klimaten = new ArrayList<>();
 
     public PlantenSoort() {
     }
@@ -54,6 +67,18 @@ public class PlantenSoort {
 
     public void setDuurTotPluk(int duurTotPluk) {
         this.duurTotPluk = duurTotPluk;
+    }
+
+    public List<Grondsoort> getGrondsoorten() {
+        return grondsoorten;
+    }
+
+    public List<Orientatie> getOrientaties() {
+        return orientaties;
+    }
+
+    public List<Klimaat> getKlimaten() {
+        return klimaten;
     }
 }
 
