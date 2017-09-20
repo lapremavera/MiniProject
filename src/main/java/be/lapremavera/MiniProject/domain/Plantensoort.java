@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class PlantenSoort {
+public class Plantensoort {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -20,13 +20,53 @@ public class PlantenSoort {
     @Column
     private String oogsttijd;
     @Column
-    private String beschrijvingPlantSoort;
+    private String beschrijvingPlantsoort;
+    @Column
+    private int plantAfstand;
+    @Column
+    private String groeiVoorwaarden;
+
+    public String getGroeiVoorwaarden() {
+        return groeiVoorwaarden;
+    }
+
+    public void setGroeiVoorwaarden(String groeiVoorwaarden) {
+        this.groeiVoorwaarden = groeiVoorwaarden;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getOogsttijd() {
+        return oogsttijd;
+    }
+
+    public void setOogsttijd(String oogsttijd) {
+        this.oogsttijd = oogsttijd;
+    }
+
+    public String getBeschrijvingPlantsoort() {
+        return beschrijvingPlantsoort;
+    }
+
+    public void setBeschrijvingPlantsoort(String beschrijvingPlantsoort) {
+        this.beschrijvingPlantsoort = beschrijvingPlantsoort;
+    }
+
+    public int getPlantAfstand() {
+        return plantAfstand;
+    }
+
+    public void setPlantAfstand(int plantAfstand) {
+        this.plantAfstand = plantAfstand;
+    }
 
     @OneToMany
     private List<Grondsoort> grondsoorten = new ArrayList<>();
 
     @ElementCollection
-    @CollectionTable(name = "planten_soort_orientaties")
+    @CollectionTable(name = "plantensoort_orientaties")
     @Column(name = "orientatie")
     @Enumerated(EnumType.STRING)
     private List<Orientatie> orientaties = new ArrayList<>();
@@ -34,10 +74,10 @@ public class PlantenSoort {
     @OneToMany
     private List<Klimaat> klimaten = new ArrayList<>();
 
-    public PlantenSoort() {
+    public Plantensoort() {
     }
 
-    public PlantenSoort(String naamSoort) {
+    public Plantensoort(String naamSoort) {
         this.naamSoort = naamSoort;
     }
 

@@ -3,11 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>sla je slag!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 
-<h1>Welkom!</h1>
+<h1>Groente.</h1>
 <h2>Sla je ... euhm... sla in je eigen moestuin.</h2>
+<p>Of schiet wortel.</p>
 <body>
+
+<ul id= "groenten">
+    <li><a href="aardappel.html">aardappel</a></li>
+    <li><a href="aardappel.html">broccoli</a></li>
+    <li><a href="aardappel.html">courgette</a></li>
+    <li><a href="aardappel.html">doperwt</a></li>
+    <li><a href="aardappel.html">rucola</a></li>
+    <li><a href="aardappel.html">tomaat</a></li>
+
+
+</ul>
+
+<div class="formulier">
+
+<form id="groente-create-form">
+    <div class="form-groep">
+        <label for="plantennaam">Plantennaam:</label>
+        <input type="text" id="Plantennaam" name="plantennaam" required="required" placeholder="Schrijf hier de plantennaam"/>
+    </div>
+
+    <div class="form-group">
+        <label for="LatijnseNaam">Latijnse naam:</label>
+        <input type="text" id="LatijnseNaam" name="LatijnseNaam" placeholder="Schrijf hier de Latijnse naam"/>
+
+    </div>
+    <div class="form-group">
+        <label for="Standplaats">Standplaats:</label>
+        <input type="checkbox" id="Standplaats" value="zonnig"/>zonnig
+        <input type="checkbox" name="Grondsoort" value="halfschaduw"/>halfschaduw
+        <input type="checkbox" name="Grondsoort" value="schaduw"/>schaduw
+    </div>
+
+    <div class="form-group">
+        <label for="Grondsoort">Grondsoort:</label>
+        <input type="checkbox" id="Grondsoort" value="leem"/>leem
+        <input type="checkbox" name="Grondsoort" value="klei"/>klei
+        <input type="checkbox" name="Grondsoort" value="zand"/>zand
+
+    </div>
+
+    <div class="form-group">
+        <label for="plantinfo">Een beetje info</label>
+        <textarea id="plantinfo" name="info" placeholder="Schrijf hier wat info" style="height:200px"></textarea>
+
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Voeg toe">
+</form>
+
+</div>
+
 
 </body>
 </html>

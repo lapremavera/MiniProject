@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"type="text/css" href="style.css">
+    <title>Groentenzoeker</title>
+</head>
+
+<h1>Welke groenten gedijen het beste in mijn tuin?</h1>
+
+<h2>Vul je adres in</h2>
+<form>
+    <label for="frmAddressS">Adres</label>
+    <input name="ship-address" required id="frmAddressS" placeholder="straat+nummer" autocomplete="shipping street-address">
+
+    <label for="frmCityS">Plaats</label>
+    <input name="ship-city" required id="frmCityS" placeholder="Gent" autocomplete="shipping locality">
+
+    <label for="frmZipS">Postcode</label>
+    <input name="ship-zip" required id="frmZipS" placeholder="9000" autocomplete="shipping postal-code">
+
+    <label for="frmCountryS">Land</label>
+    <input name="ship-country" required id="frmCountryS" placeholder="België" autocomplete="shipping country">
+    <input id="LocationFinder" type="button" onclick="MijnLocatie" value="zoek!"/>
+</form>
+<div id="map"></div>
+
+
+<body>
+
+</body>
+
+
+</html>

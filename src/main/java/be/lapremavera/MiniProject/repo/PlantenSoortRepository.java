@@ -1,11 +1,12 @@
 package be.lapremavera.MiniProject.repo;
 
 
-import be.lapremavera.MiniProject.domain.PlantenSoort;
+import be.lapremavera.MiniProject.domain.Plantensoort;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 
-public interface PlantenSoortRepository extends JpaRepository <PlantenSoort, Integer> {
+public interface PlantenSoortRepository extends JpaRepository <Plantensoort, Integer> {
+
+    //Plantensoort getByKlimaat (String klimaat);
+
 }
