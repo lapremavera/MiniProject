@@ -1,65 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
-    <meta charset="UTF-8">
-    <title>sla je slag!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Groentenzoeker</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  
 </head>
 
-<h1>Groente.</h1>
-<h2>Sla je ... euhm... sla in je eigen moestuin.</h2>
-<p>Of schiet wortel.</p>
 <body>
-
-<ul id= "groenten">
-    <li><a href="aardappel.html">aardappel</a></li>
-    <li><a href="aardappel.html">broccoli</a></li>
-    <li><a href="aardappel.html">courgette</a></li>
-    <li><a href="aardappel.html">doperwt</a></li>
-    <li><a href="aardappel.html">rucola</a></li>
-    <li><a href="aardappel.html">tomaat</a></li>
-
-
-</ul>
-
-<div class="formulier">
-
-<form id="groente-create-form">
-    <div class="form-groep">
-        <label for="plantennaam">Plantennaam:</label>
-        <input type="text" id="Plantennaam" name="plantennaam" required="required" placeholder="Schrijf hier de plantennaam"/>
-    </div>
-
-    <div class="form-group">
-        <label for="LatijnseNaam">Latijnse naam:</label>
-        <input type="text" id="LatijnseNaam" name="LatijnseNaam" placeholder="Schrijf hier de Latijnse naam"/>
-
-    </div>
-    <div class="form-group">
-        <label for="Standplaats">Standplaats:</label>
-        <input type="checkbox" id="Standplaats" value="zonnig"/>zonnig
-        <input type="checkbox" name="Grondsoort" value="halfschaduw"/>halfschaduw
-        <input type="checkbox" name="Grondsoort" value="schaduw"/>schaduw
-    </div>
-
-    <div class="form-group">
-        <label for="Grondsoort">Grondsoort:</label>
-        <input type="checkbox" id="Grondsoort" value="leem"/>leem
-        <input type="checkbox" name="Grondsoort" value="klei"/>klei
-        <input type="checkbox" name="Grondsoort" value="zand"/>zand
-
-    </div>
-
-    <div class="form-group">
-        <label for="plantinfo">Een beetje info</label>
-        <textarea id="plantinfo" name="info" placeholder="Schrijf hier wat info" style="height:200px"></textarea>
-
-    </div>
-
-    <input type="submit" class="btn btn-primary" value="Voeg toe">
-</form>
-
+  
+<!-- thanks to codepen-->
+<!-- https://codepen.io/andytran/full/RPBdgM-->
+<div class="groentenzoekerTitle">
+  <h1>Groentenzoeker</h1>
+  <p>Welke groenten groeien het beste in mijn tuintje?</p>
+  <span>Made <i class='fa fa-code'></i> by <a href= www.lapremavera.be>Prema</a></span>
 </div>
+<div class="rerun"><a href="">Zoek opnieuw</a></div>
+<div class="container">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title">Vul je adres in</h1>
+    <form id="groenten-zoek-form">
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required"/>
+        <label for="#{label}">Straat en nummer</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="#{type}" id="postcode" required="required"/>
+        <label for="postcode">Postcode</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required"/>
+        <label for="#{label}">Plaats</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container">
+        <button type="submit"><span>ZOEK!</span></button>
+      </div>
+      <div class="footer"><a href="#">Of klik hier</a></div>
+    </form>
+  </div>
+  <div class="card alt">
+    <div class="toggle"></div>
+    <h1 class="title">Register
+      <div class="close"></div>
+    </h1>
+    <form>
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required"/>
+        <label for="#{label}">Username</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required"/>
+        <label for="#{label}">Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required"/>
+        <label for="#{label}">Repeat Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container">
+        <button><span>Next</span></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- toevoegen--><a id="toevoegen" href="voegJeGroenteToe.html" title="Voeg een groente toe"><i class="fa fa-link"></i></a>
+<!-- groentenlijst--><a id="groentenlijst" href="groentenlijst.html" title="groentenlijst"><i class="fa fa-codepen"></i></a>
+
+    <script  src="js/index.js"></script>
+
+    <script>
+            $("#groenten-zoek-form").submit(function(e) {
+                e.preventDefault();
+
+                let postcode = $(this.postcode).val();
+                document.write(postcode);
+
+                loadGroentenLijstByPostcode(postcode);
+
+                });
+
+                function loadGroentenLijstByPostcode(postcode) {
+
+                    $.getJSON('/api/plantensoort/byPostcode/'.concat(postcode), function (plantensoorten) {
+
+                    document.writeln();
+                    for (let plantensoort of plantensoorten)
+                    {
+                        document.write(plantensoort.naamSoort);
+                        document.writeln();
+                    }
+                });
+
+                }
+
+
+
+    </script>
 
 
 </body>

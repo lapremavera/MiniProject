@@ -24,6 +24,6 @@ insert into plantensoort_orientaties(plantensoort_id, orientatie) values(6000, '
 
 
 
-insert into gemeente(id, naam, grondsoort_id, klimaat_id) values(150, 'Gent', 1600, 20);
-insert into gemeente(id, naam, grondsoort_id, klimaat_id) values(160, 'Knokke', 1800, 20);
-insert into gemeente(id, naam, grondsoort_id, klimaat_id) values(170, 'Aywaille', 1700, 10);
+insert into plaats(id, naam, grondsoort_id, klimaat_id) values(150, 'Gent', 1600, 20);
+insert into plaats(id, naam, grondsoort_id, klimaat_id) values(160, 'Knokke', 1800, 20);
+insert into plaats(id, naam, grondsoort_id, klimaat_id) values(170, 'Aywaille', 1700, 10);
