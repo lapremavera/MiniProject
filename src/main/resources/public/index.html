@@ -11,6 +11,30 @@
 
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/handlebars-latest.js"></script>
+
+
+  <!--
+    Message from Kevin: Een template is een stukje (fragment) van een pagina, die door middel van "{{ handlebars }}" expressies kan worden ingevuld.
+    Dit is veel makkelijker dan soortgelijke structuur te genereren dmv jQuery.
+   ( -->
+  <script id="groentenlijst-template" type="text/x-handlebars-template">
+    <ul class="gallery">
+      {{#each plantensoorten}}
+        <li>
+          <div class="imgwrap">
+            <a href="#">
+              <img src="aardappel.jpeg" alt="afbeelding van aardappels">
+              <span class="imgmask"></span>
+            </a>
+          </div>
+          <a href="#">
+            <h2>{{naamSoort}}</h2>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </script>
 
   
 </head>

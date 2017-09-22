@@ -6,31 +6,35 @@ $('.close').on('click', function() {
   $('.container').stop().removeClass('active');
 });
 
- $("#groenten-zoek-form").submit(function(e) {
-                e.preventDefault();
+$("#groenten-zoek-form").submit(function(e) {
+    e.preventDefault();
 
-                let postcode = $(this.postcode).val();
+    let postcode = $(this.postcode).val();
 
-                loadGroentenLijstByPostcode(postcode);
+    loadGroentenLijstByPostcode(postcode);
 
-                });
+    function loadGroentenLijstByPostcode(postcode) {
+        $.getJSON('/api/plantensoort/byPostcode/'.concat(postcode), function (plantensoorten) {
+            var $main = $("#mainBodyContent").empty();
 
-                function loadGroentenLijstByPostcode(postcode) {
+            var source   = $("#groentenlijst-template").html();
+            var template = Handlebars.compile(source);
+            let output = template({plantensoorten});
+            $main.html(output);
+        });
+    }
+});
 
-                    $.getJSON('/api/plantensoort/byPostcode/'.concat(postcode), function(plantensoorten) {
 
-                    var $main = $("#mainBodyContent").empty();
-
-
-                    var $list = $("<ul>").addClass("gallery");
-
-                    for(var ps of plantensoorten) {
-                        var $item = $("<li>")
-                            .append(
-                                $("<div>").addClass("imgwrap").append($("a").attr("href", "#")));
-                        $list.append($item);
-                    }
-                    $main.append($list);
+                    // var $list = $("<ul>").addClass("gallery");
+                    //
+                    // for(var ps of plantensoorten) {
+                    //     var $item = $("<li>")
+                    //         .append(
+                    //             $("<div>").addClass("imgwrap").append($("a").attr("href", "#")));
+                    //     $list.append($item);
+                    // }
+                    // $main.append($list);
 
 
 
@@ -63,8 +67,5 @@ $('.close').on('click', function() {
                         document.writeln();
                     }
                     */
-                });
-
-                }
 
 
