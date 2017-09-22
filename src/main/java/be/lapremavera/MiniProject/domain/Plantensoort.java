@@ -26,18 +26,23 @@ public class Plantensoort {
     @Column
     private String groeiVoorwaarden;
 
-    @OneToMany
-    private List<Grondsoort> grondsoorten = new ArrayList<>();
-
     @ElementCollection
     @CollectionTable(name = "plantensoort_orientaties")
     @Column(name = "orientatie")
     @Enumerated(EnumType.STRING)
     private List<Orientatie> orientaties = new ArrayList<>();
 
-    @OneToMany
+    @ElementCollection
+    @CollectionTable(name = "plantensoort_klimaten")
+    @Column(name = "klimaat")
+    @Enumerated(EnumType.STRING)
     private List<Klimaat> klimaten = new ArrayList<>();
 
+    @ElementCollection
+    @CollectionTable(name = "plantensoort_grondsoorten")
+    @Column(name = "grondsoort")
+    @Enumerated(EnumType.STRING)
+    private List<Grondsoort>grondsoorten=new ArrayList<>();
 
     public String getGroeiVoorwaarden() {
         return groeiVoorwaarden;
@@ -111,9 +116,6 @@ public class Plantensoort {
         this.duurTotPluk = duurTotPluk;
     }
 
-    public List<Grondsoort> getGrondsoorten() {
-        return grondsoorten;
-    }
 
     public List<Orientatie> getOrientaties() {
         return orientaties;

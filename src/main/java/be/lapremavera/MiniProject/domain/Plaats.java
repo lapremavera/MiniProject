@@ -21,11 +21,12 @@ public class Plaats {
 
     private Integer postcode;
 
-    @ManyToOne
-    private Grondsoort grondsoort;
 
-    @ManyToOne
+    @Enumerated(EnumType.STRING)
     private Klimaat klimaat;
+
+    @Enumerated(EnumType.STRING)
+    private Grondsoort grondsoort;
 
     public Integer getId() {
         return id;
@@ -35,20 +36,9 @@ public class Plaats {
         return naam;
     }
 
-    public Grondsoort getGrondsoort() {
-        return grondsoort;
-    }
-
     public Klimaat getKlimaat() {
         return klimaat;
     }
 
-    public boolean isBos () {
-        if(postcode%1000==0){
-            return false;
-        }else {
-            return true;
-        }
 
-    }
 }
