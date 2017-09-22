@@ -51,7 +51,7 @@ public class PlantensoortRESTController {
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", path="/byPostcode/{postcode}")
     public List<Plantensoort> getByPostcode(@PathVariable("postcode")Integer postcode)
     {
-        // do your magic
+
         List<Plantensoort> allePlantensoorten = pr.findAll();
 
         /*Plaats nieuwePlaats = new Plaats();

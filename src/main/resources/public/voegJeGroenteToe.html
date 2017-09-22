@@ -18,6 +18,73 @@
     <p>Want niet alle groenten staan in het lijstje.</p>
 </div>
 <body>
+    <div class="groententcontainer">
+
+
+        <form id="groenteInvulformulier">
+            <div class="form-group">
+                <label for="plantennaam">Naam Plant:</label>
+                <input class="form-control" id="plantennaam" name="plantennaam"/>
+            </div>
+            <div class="form-group">
+                <label for="latijnse naam">Latijnse naam:</label>
+                <input class="form-control" id="latijnse naam" name="latijnse naam"/>
+            </div>
+            <div class="form-group">
+                <label for="klimaat">Klimaat:</label>
+                <input class="form-control" id="klimaat" name="klimaat"/>
+            </div>
+            <div class="form-group">
+                <label for="grondsoort">Grondsoort:</label>
+                <input class="form-control" id="grondsoort" name="grondsoort"/>
+            </div>
+            <div class="form-group">
+                <label for="afbeelding">Afbeelding:</label>
+                <input class="form-control" id="afbeelding" name="afbeelding"/>
+            </div>
+            <div class="form-group">
+                <label for="action">Action:</label>
+                <input class="form-control" id="action" name="action"/>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Create">
+        </form>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Naam plant</th>
+                <th>Latijnse naam</th>
+                <th>Klimaat</th>
+                <th>Grondsoort</th>
+                <th>Afbeelding</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+
+            <tbody id="plantensoortLijstData">
+            <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <script  src="js/voegJeGroenteToe.js"></script>
+
+
+
+
 
 </body>
 </html>

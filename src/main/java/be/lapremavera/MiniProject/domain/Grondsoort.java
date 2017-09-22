@@ -20,4 +20,6 @@ public class Grondsoort {
     public String getNaam() {
         return naam;
     }
+
+
 }

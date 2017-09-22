@@ -10,7 +10,6 @@ $('.close').on('click', function() {
                 e.preventDefault();
 
                 let postcode = $(this.postcode).val();
-                document.write(postcode);
 
                 loadGroentenLijstByPostcode(postcode);
 
@@ -18,14 +17,52 @@ $('.close').on('click', function() {
 
                 function loadGroentenLijstByPostcode(postcode) {
 
-                    $.getJSON('/api/plantensoort/byPostcode/'.concat(postcode), function (plantensoorten) {
+                    $.getJSON('/api/plantensoort/byPostcode/'.concat(postcode), function(plantensoorten) {
 
+                    var $main = $("#mainBodyContent").empty();
+
+
+                    var $list = $("<ul>").addClass("gallery");
+
+                    for(var ps of plantensoorten) {
+                        var $item = $("<li>")
+                            .append(
+                                $("<div>").addClass("imgwrap").append($("a").attr("href", "#")));
+                        $list.append($item);
+                    }
+                    $main.append($list);
+
+
+
+
+
+
+          /*
+                        <ul class="gallery">
+
+                            <li>
+                                <div class="imgwrap">
+                                    <a href="#">
+                                        <img src="aardappel.jpeg" alt="afbeelding van aardappels">
+                                        <span class="imgmask"></span>
+                                    </a>
+                                </div>
+                                <a href="#">
+                                    <h2>Aardappel</h2>
+                                </a>
+                            </li>
+                            */
+
+
+
+                    /*
                     document.writeln();
                     for (let plantensoort of plantensoorten)
                     {
                         document.write(plantensoort.naamSoort);
                         document.writeln();
                     }
+                    */
                 });
 
                 }

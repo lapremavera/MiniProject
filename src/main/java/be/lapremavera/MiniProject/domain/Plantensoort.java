@@ -26,6 +26,19 @@ public class Plantensoort {
     @Column
     private String groeiVoorwaarden;
 
+    @OneToMany
+    private List<Grondsoort> grondsoorten = new ArrayList<>();
+
+    @ElementCollection
+    @CollectionTable(name = "plantensoort_orientaties")
+    @Column(name = "orientatie")
+    @Enumerated(EnumType.STRING)
+    private List<Orientatie> orientaties = new ArrayList<>();
+
+    @OneToMany
+    private List<Klimaat> klimaten = new ArrayList<>();
+
+
     public String getGroeiVoorwaarden() {
         return groeiVoorwaarden;
     }
@@ -62,17 +75,6 @@ public class Plantensoort {
         this.plantAfstand = plantAfstand;
     }
 
-    @OneToMany
-    private List<Grondsoort> grondsoorten = new ArrayList<>();
-
-    @ElementCollection
-    @CollectionTable(name = "plantensoort_orientaties")
-    @Column(name = "orientatie")
-    @Enumerated(EnumType.STRING)
-    private List<Orientatie> orientaties = new ArrayList<>();
-
-    @OneToMany
-    private List<Klimaat> klimaten = new ArrayList<>();
 
     public Plantensoort() {
     }
