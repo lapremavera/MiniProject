@@ -1,5 +1,7 @@
 package be.lapremavera.MiniProject.web;
 
+import be.lapremavera.MiniProject.domain.Grondsoort;
+import be.lapremavera.MiniProject.domain.Klimaat;
 import be.lapremavera.MiniProject.domain.Plaats;
 import be.lapremavera.MiniProject.domain.Plantensoort;
 import be.lapremavera.MiniProject.repo.PlantenSoortRepository;
@@ -9,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -48,24 +51,28 @@ public class PlantensoortRESTController {
         return new ResponseEntity<>(input, HttpStatus.OK);
     }
 
+
     @RequestMapping(method = RequestMethod.GET, produces = "application/json", path="/byPostcode/{postcode}")
     public List<Plantensoort> getByPostcode(@PathVariable("postcode")Integer postcode)
     {
+        Plaats plaats = new Plaats();
+        plaats.setPostcode(postcode);
+
+        Grondsoort grondsoort = plaats.geefGrondsoort();
+        Klimaat klimaat = plaats.getKlimaat();
 
         List<Plantensoort> allePlantensoorten = pr.findAll();
+        List<Plantensoort> gefilterdePlantensoorten = new ArrayList<>();
 
-        /*Plaats nieuwePlaats = new Plaats();
-        nieuwePlaats.setPostcode(postcode);
+        for (Plantensoort plSoort : allePlantensoorten) {
+            if (plSoort.getGrondsoorten().contains(grondsoort)
+                    && (plSoort.getKlimaten().contains(klimaat))) {
+                gefilterdePlantensoorten.add(plSoort);
 
-        for (Plantensoort plSoort : allePlantensoorten)
-        {
-            if (nieuwePlaats.isBos())
-            {
-                plSoort.
             }
-        }*/
+        }
 
-        return allePlantensoorten;
+        return gefilterdePlantensoorten;
     }
 
 

@@ -13,6 +13,10 @@ public class Plantensoort {
 
     @Column(nullable = false)
     private String naamSoort;
+
+    @Column
+    private String naamLatijn;
+
     @Column
     private Integer maxHoogte;
     @Column
@@ -43,6 +47,7 @@ public class Plantensoort {
     @Column(name = "grondsoort")
     @Enumerated(EnumType.STRING)
     private List<Grondsoort>grondsoorten=new ArrayList<>();
+
 
     public String getGroeiVoorwaarden() {
         return groeiVoorwaarden;
@@ -123,6 +128,14 @@ public class Plantensoort {
 
     public List<Klimaat> getKlimaten() {
         return klimaten;
+    }
+
+    public List<Grondsoort> getGrondsoorten() {
+        return grondsoorten;
+    }
+
+    public void setGrondsoorten(List<Grondsoort> grondsoorten) {
+        this.grondsoorten = grondsoorten;
     }
 }
 

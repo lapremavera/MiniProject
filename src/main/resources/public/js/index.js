@@ -26,6 +26,7 @@ $("#groenten-zoek-form").submit(function(e) {
 });
 
 
+
                     // var $list = $("<ul>").addClass("gallery");
                     //
                     // for(var ps of plantensoorten) {

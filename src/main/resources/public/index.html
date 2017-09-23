@@ -23,20 +23,49 @@
       {{#each plantensoorten}}
         <li>
           <div class="imgwrap">
-            <a href="#">
-              <img src="aardappel.jpeg" alt="afbeelding van aardappels">
+            <!--<a href="#" onclick="geefDetail()">-->
+              <img src="aardappel.jpeg"  alt="afbeelding van aardappels" onclick="geefDetail()"/>
               <span class="imgmask"></span>
-            </a>
+            <!--</a>-->
           </div>
-          <a href="#">
-            <h2>{{naamSoort}} {{maxHoogte}}</h2>
-          </a>
+          <!--<a href="#">-->
+            <h2>{{naamSoort}}</h2>
+          <!--</a>-->
         </li>
       {{/each}}
     </ul>
   </script>
 
-  
+  <script>
+      function geefDetail(){
+    document.writeln("gelukt");
+    }
+  </script>
+
+<!-- Script voor Groentendetail-->
+  <script id="groentendetail" type="text/x-handlebars-template">
+    <ul class="gallery">
+      <li>
+        <div class="imgwrap">
+
+            <img src="aardappel.jpeg" alt="afbeelding van aardappels">
+            <span class="imgmask"></span>
+        </div>
+        <a href="#">
+          <h2>{{naamSoort}}</h2>
+          <p>{{naamLatijn}}</p>
+          <p>{{maxHoogte}}</p>
+          <p>{{duurTotPluk}}</p>
+          <p>{{oogsttijd}}</p>
+          <p>{{beschrijvingPlantsoort}}</p>
+          <p>{{plantAfstand}}</p>
+          <p>{{groeiVoorwaarden}}</p>
+
+        </a>
+      </li>
+         </ul>
+  </script>
+
 </head>
 
 <body>
@@ -56,7 +85,7 @@
     <h1 class="title">Vul je adres in</h1>
     <form id="groenten-zoek-form">
       <div class="input-container">
-        <input type="#{type}" id="#{label}" required="required"/>
+        <input type="#{type}" id="#{label}"/>
         <label for="#{label}">Straat en nummer</label>
         <div class="bar"></div>
       </div>
@@ -66,7 +95,7 @@
         <div class="bar"></div>
       </div>
       <div class="input-container">
-        <input type="#{type}" id="#{label}" required="required"/>
+        <input type="#{type}" id="#{label}"/>
         <label for="#{label}">Plaats</label>
         <div class="bar"></div>
       </div>
@@ -76,33 +105,7 @@
       <div class="footer"><a href="#">Of klik hier</a></div>
     </form>
   </div>
-  <div class="card alt">
-    <div class="toggle"></div>
-    <h1 class="title">Register
-      <div class="close"></div>
-    </h1>
-    <form>
-      <div class="input-container">
-        <input type="#{type}" id="#{label}" required="required"/>
-        <label for="#{label}">Username</label>
-        <div class="bar"></div>
-      </div>
-      <div class="input-container">
-        <input type="#{type}" id="#{label}" required="required"/>
-        <label for="#{label}">Password</label>
-        <div class="bar"></div>
-      </div>
-      <div class="input-container">
-        <input type="#{type}" id="#{label}" required="required"/>
-        <label for="#{label}">Repeat Password</label>
-        <div class="bar"></div>
-      </div>
-      <div class="button-container">
-        <button><span>Next</span></button>
-      </div>
-    </form>
-  </div>
-</div>
+
 
 <!-- toevoegen--><a id="toevoegen" href="voegJeGroenteToe.html" title="Voeg een groente toe"><i class="fa fa-link"></i></a>
 <!-- groentenlijst--><a id="groentenlijst" href="groentenlijst.html" title="groentenlijst"><i class="fa fa-codepen"></i></a>
@@ -112,7 +115,7 @@
     <script>
 
     </script>
-
+</div>
 
 </body>
 </html>

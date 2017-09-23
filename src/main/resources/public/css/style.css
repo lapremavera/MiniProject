@@ -523,7 +523,7 @@ a {
   text-align: center;
   width: 100%;
 }
-.gallery li {
+/*.gallery li {
   width: 21.73913%;
   float: left;
   text-align: center;
@@ -618,7 +618,8 @@ a {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .gallery li .imgmask {
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plus_font_awesome.svg/2000px-Plus_font_awesome.svg.png") 50%/25px no-repeat;
+  background: #e9e9e9 url("artichaud_ombre.png") 50%/25px;
+  background-repeat: repeat-y;
   position: absolute;
   top: 0;
   right: 0;
@@ -640,17 +641,64 @@ a {
     width: 100%;
   }
 }
-.gallery li:hover img {
+/*.gallery li:hover img {
   opacity: 0;
   transition: all .25s ease-out;
 }
 .gallery li:hover .imgmask {
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plus_font_awesome.svg/2000px-Plus_font_awesome.svg.png") 50%/85px no-repeat;
+  background: #e9e9e9 url("artichaud_ombre.png) 50%/85px;
+  background-repeat: repeat-y;
   opacity: 1;
   transition: all .25s ease-out;
 }
-
+*/
 footer {
   font-size: 14.5px;
   text-transform: uppercase;
 }
+
+.signature p{
+	text-align: center;
+	font-family: Helvetica, Arial, Sans-Serif;
+	font-size: 0.85em;
+	color: #AAAAAA;
+}
+
+.signature .much-heart{
+	display: inline-block;
+	position: relative;
+	margin: 0 4px;
+	height: 10px;
+	width: 10px;
+	background: #AC1D3F;
+	border-radius: 4px;
+	-ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.signature .much-heart::before,
+.signature .much-heart::after {
+	  display: block;
+  content: '';
+  position: absolute;
+  margin: auto;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #AC1D3F;
+  top: -4px;
+}
+
+.signature .much-heart::after {
+	bottom: 0;
+	top: auto;
+	left: -4px;
+}
+
+.signature a {
+	color: #AAAAAA;
+	text-decoration: none;
+	font-weight: bold;
+}
+
