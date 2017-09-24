@@ -5,7 +5,7 @@ insert into plantensoort_klimaten(plantensoort_id, klimaat) values(6000, 'STAD')
 insert into plantensoort_orientaties(plantensoort_id, orientatie) values(6000, 'ZUID');
 insert into plantensoort_grondsoorten(plantensoort_id, grondsoort) values(6000, 'ZANDLEEM');
 --Data voor aardappel
-insert into plantensoort(id, duur_tot_pluk, max_hoogte, naam_soort, oogsttijd, plant_afstand) values (1000, 90, 90, 'aardappel','juli-oktober', 70);
+insert into plantensoort(id, duur_tot_pluk, max_hoogte, naam_soort, oogsttijd, plant_afstand,beschrijving_plantsoort) values (1000, 90, 90, 'aardappel','juli-oktober', 70,'De aardappel, in de volksmond ook \'ne patat\' genoemd, is een tot knollen verdikte stengel van een plant die oorspronkelijk uit de hoogvlakten van Peru en Bolivia komt. Nu is de aardappel in vele Europese landen een van de basisvoedingsmiddelen. Weet je dat er in België meer dan 200 aardappelrassen geteeld worden? Opgepast; aardappelloof is giftig en niet eetbaar. Gelukkig is de aardappel een heel gezonde knol, tenzij je er frietjes van bakt.');
 insert into plantensoort_klimaten(plantensoort_id, klimaat) values(1000, 'BOS');
 insert into plantensoort_klimaten(plantensoort_id, klimaat) values(1000, 'STAD');
 insert into plantensoort_orientaties(plantensoort_id, orientatie) values(1000, 'ZUID');
@@ -14,6 +14,7 @@ insert into plantensoort_orientaties(plantensoort_id, orientatie) values(1000, '
 insert into plantensoort_orientaties(plantensoort_id, orientatie) values(1000, 'WEST');
 insert into plantensoort_grondsoorten(plantensoort_id, grondsoort) values(1000, 'ZANDLEEM');
 insert into plantensoort_grondsoorten(plantensoort_id, grondsoort) values(1000, 'LEEM');
+
 --Data voor courgette
 insert into plantensoort(id, duur_tot_pluk, max_hoogte, naam_soort, oogsttijd, plant_afstand) values (2000, 42, 90, 'Courgette', 'juli-oktober', 100);
 insert into plantensoort_klimaten(plantensoort_id, klimaat) values(2000, 'BOS');

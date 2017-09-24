@@ -14,6 +14,14 @@ public class Plantensoort {
     @Column(nullable = false)
     private String naamSoort;
 
+    public String getNaamLatijn() {
+        return naamLatijn;
+    }
+
+    public void setNaamLatijn(String naamLatijn) {
+        this.naamLatijn = naamLatijn;
+    }
+
     @Column
     private String naamLatijn;
 
@@ -23,7 +31,7 @@ public class Plantensoort {
     private Integer duurTotPluk;
     @Column
     private String oogsttijd;
-    @Column
+    @Column (length = 10000)
     private String beschrijvingPlantsoort;
     @Column
     private Integer plantAfstand;

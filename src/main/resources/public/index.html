@@ -23,27 +23,60 @@
       {{#each plantensoorten}}
         <li>
           <div class="imgwrap">
-            <!--<a href="#" onclick="geefDetail()">-->
-              <img src="aardappel.jpeg"  alt="afbeelding van aardappels" onclick="geefDetail()"/>
+              <img src="aardappel.jpeg"  alt="afbeelding van aardappels" onclick="geefDetail({{id}})"/>
               <span class="imgmask"></span>
-            <!--</a>-->
           </div>
-          <!--<a href="#">-->
             <h2>{{naamSoort}}</h2>
-          <!--</a>-->
         </li>
       {{/each}}
     </ul>
   </script>
 
   <script>
-      function geefDetail(){
-    document.writeln("gelukt");
+    function geefDetail(id){
+    document.writeln(id);
+
+    e.preventDefault();
+
+        $.getJSON('/api/plantensoort/'.concat(id), function (e) {
+            var $main = $("#mainBodyContent").empty();
+
+            var source   = $("#groentedetail-template").html();
+            var template = Handlebars.compile(source);
+            let output = template({plantensoorten});
+            $main.html(output);
+        });
+    }
+});
+
     }
   </script>
 
-<!-- Script voor Groentendetail-->
-  <script id="groentendetail" type="text/x-handlebars-template">
+  <script id="groentedetail-template" type="text/x-handlebars-template">
+    <div class="groentenzoekerTitle">
+      <h1>{{naamSoort}}</h1>
+      <p>{{naamLatijn}}</p>
+      <p>{{oogsttijd}}</p>
+
+      <hr>
+    </div>
+
+    <div>
+      <figure>
+        <img src="aardappel.jpeg" alt="afbeelding van aardappel">
+      </figure>
+    </div>
+
+    <div id="aardappelinfo">{{beschrijvingPlantsoort}}
+
+
+
+    </div>
+  </script>
+
+
+  <!-- Script voor Groentedetail-->
+  <script id="groentedetail" type="text/x-handlebars-template">
     <ul class="gallery">
       <li>
         <div class="imgwrap">
