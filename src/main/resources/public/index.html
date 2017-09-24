@@ -35,21 +35,15 @@
   <script>
     function geefDetail(id){
     document.writeln(id);
-
-    e.preventDefault();
-
         $.getJSON('/api/plantensoort/'.concat(id), function (e) {
             var $main = $("#mainBodyContent").empty();
 
             var source   = $("#groentedetail-template").html();
             var template = Handlebars.compile(source);
-            let output = template({plantensoorten});
+            let output = template({plantensoort});
             $main.html(output);
         });
-    }
-});
-
-    }
+      }
   </script>
 
   <script id="groentedetail-template" type="text/x-handlebars-template">
