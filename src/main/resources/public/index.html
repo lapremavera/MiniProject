@@ -36,16 +36,19 @@
 
   <script id="groentedetail-template" type="text/x-handlebars-template">
     <div class="groentenzoekerTitle">
+
       <h1>{{naamSoort}}</h1>
       <p>{{naamLatijn}}</p>
       <p>{{oogsttijd}}</p>
 
       <hr>
+
     </div>
 
     <div>
+
       <figure>
-        <img src="aardappel.jpeg" alt="afbeelding van aardappel"/>
+        <img src={{afbeelding}}/>
       </figure>
     </div>
 
@@ -59,7 +62,7 @@
 
             var source   = $("#groentedetail-template").html();
             var template = Handlebars.compile(source);
-            let output = template({plantensoort});
+            let output = template(plantensoort);
             $main.html(output);
         });
       }

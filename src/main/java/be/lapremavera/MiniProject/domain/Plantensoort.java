@@ -37,6 +37,15 @@ public class Plantensoort {
     private Integer plantAfstand;
     @Column
     private String groeiVoorwaarden;
+
+    public String getAfbeelding() {
+        return afbeelding;
+    }
+
+    public void setAfbeelding(String afbeelding) {
+        this.afbeelding = afbeelding;
+    }
+
     @Column
     private String afbeelding;
 
