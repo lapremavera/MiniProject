@@ -115,7 +115,7 @@
                     beschrijvingPlantsoort: $(this.beschrijvingPlantsoort).val(),
                     oogsttijd:$(this.oogsttijd).val(),
                     duurTotPluk: Number.parseInt($(this.duurTotPluk).val()),
-                    maxHoogte: Number.parseInt($(this.maxHoogte).val())
+                    maxHoogte: Number.parseInt($(this.maxHoogte).val()),
                     plantAfstand: Number.parseInt($(this.plantAfstand).val())
                 };
 
@@ -137,8 +137,9 @@
 
             loadGroentenlijst();
 
-                $.getJSON('/api/plantensoorten/all)
-            function loadGroentenlijst() {ll', function (plantensoort) {
+
+            function loadGroentenlijst()
+             {$.getJSON('/api/plantensoorten/all', function (plantensoort) {
                     let $tbody = $("#groentenlijst-data").empty();
 
                     for (let groente of plantensoorten) {
