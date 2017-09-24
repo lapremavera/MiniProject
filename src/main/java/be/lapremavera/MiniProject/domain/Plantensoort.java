@@ -29,6 +29,8 @@ public class Plantensoort {
     private Integer plantAfstand;
     @Column
     private String groeiVoorwaarden;
+    @Column
+    private String afbeelding;
 
     @ElementCollection
     @CollectionTable(name = "plantensoort_orientaties")

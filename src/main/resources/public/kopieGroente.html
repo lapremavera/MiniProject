@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Groenten detail</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"/>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<h1 class="jumbotron">Groente</h1>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Naam groente</th>
+            <th>Latijnse naam</th>
+            <th>Groeivoorwaarden</th>
+            <th>Oogstmaanden</th>
+            <th>Duur tot pluk</th>
+            <th>Max. hoogte</th>
+            <th>Plantafstand</th>
+            <th>Een beetje info</th>
+
+        </tr>
+        </thead>
+        <tbody id="groentenlijst-data">
+        <tr>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <div class="container" id="mainBodyContent">
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
+
+    <div class="groentecontainer">
+        <form id="groenteInvulformulier">
+            <div class="form-group">
+                <label for="plantennaam">Naam Plant:</label>
+                <input class="form-control" id="plantennaam" name="plantennaam"/>
+            </div>
+            <div class="form-group">
+                <label for="latijnseNaam">Latijnse naam:</label>
+                <input class="form-control" id="latijnseNaam" name="latijnseNaam"/>
+            </div>
+            <div class="form-group">
+            <label for="groeivoorwaarden">Groeivoorwaarden:</label>
+            <input class="form-control" id="groeivoorwaarden" name="groeivoorwaarden"/>
+        </div>
+            <div class="form-group">
+                <label for="oogstmaanden">Oogstmaanden:</label>
+                <input class="form-control" id="oogstmaanden" name="oogstmaanden"/>
+            </div>
+            <div class="form-group">
+                <label for="duurTotPluk">Duur tot pluk:</label>
+                <input class="form-control" id="duurTotPluk" name="duurTotPluk"/>
+            </div>
+            <div class="form-group">
+                <label for="maxHoogte">Max. hoogte:</label>
+                <input class="form-control" id="maxHoogte" name="maxHoogte"/>
+            </div>
+            <div class="form-group">
+                <label for="plantAfstand">plantafstand:</label>
+                <input class="form-control" id="plantAfstand" name="plantAfstand"/>
+            </div>
+            <div class="form-group">
+                <label for="info">Een beetje info:</label>
+                <input class="info" id="info" name="info"/>
+            </div>
+        </form>
+        <div class="button-container">
+            <button type="submit"><span>Voeg toe!</span></button>
+        </div>
+
+    </div>
+
+    <script>
+            $("#groenteInvulformulier").submit(function(e) {
+                e.preventDefault();
+
+                let groente = {
+                    naamSoort: $(this.naamSoort).val(),
+                    naamLatijn: $(this.latijnseNaam).val(),
+                    groeiVoorwaarden: $(this.groeiVoorwaarden).val(),
+                    beschrijvingPlantsoort: $(this.beschrijvingPlantsoort).val(),
+                    oogsttijd:$(this.oogsttijd).val(),
+                    duurTotPluk: Number.parseInt($(this.duurTotPluk).val()),
+                    maxHoogte: Number.parseInt($(this.maxHoogte).val())
+                    plantAfstand: Number.parseInt($(this.plantAfstand).val())
+                };
+
+                $.ajax({
+                    method: 'post',
+                    url: '/api/plantensoort',
+                    contentType: 'application/json',
+                    data: JSON.stringify(groente),
+                    processData: false,
+                    success: function() {
+                        // Refresh data table
+                        loadGroentenlijst();
+
+                    }
+                });
+
+                this.reset();
+            });
+
+            loadGroentenlijst();
+
+                $.getJSON('/api/plantensoorten/all)
+            function loadGroentenlijst() {ll', function (plantensoort) {
+                    let $tbody = $("#groentenlijst-data").empty();
+
+                    for (let groente of plantensoorten) {
+                        let $removeButton = $("<button>").addClass("btn").addClass("btn-danger").text("Remove");
+                        $removeButton.click(function(e) {
+                            $.ajax({
+                                method: 'delete',
+                                url: `/api/plantensoort/${plantensoort.id}`,
+                                success: loadGroentenlijst
+                            });
+                        });
+
+                        let $row = $('<tr>')
+                            .append($('<td>').text(plantensoort.id))
+                            .append($('<td>').text(plantensoort.plantennaam))
+                            .append($('<td>').text(plantensoort.latijnseNaam))
+                            .append($('<td>').text(plantensoort.groeivoorwaarden))
+                            .append($('<td>').text(plantensoort.info))
+                            .append($('<td>').append($removeButton));
+                        $tbody.append($row);
+                    }
+                });
+            }
+        </script>
+</div>
+</body>
+</html>
