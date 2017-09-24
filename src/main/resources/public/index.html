@@ -32,19 +32,7 @@
     </ul>
   </script>
 
-  <script>
-    function geefDetail(id){
-    document.writeln(id);
-        $.getJSON('/api/plantensoort/'.concat(id), function (e) {
-            var $main = $("#mainBodyContent").empty();
 
-            var source   = $("#groentedetail-template").html();
-            var template = Handlebars.compile(source);
-            let output = template({plantensoort});
-            $main.html(output);
-        });
-      }
-  </script>
 
   <script id="groentedetail-template" type="text/x-handlebars-template">
     <div class="groentenzoekerTitle">
@@ -57,17 +45,25 @@
 
     <div>
       <figure>
-        <img src="aardappel.jpeg" alt="afbeelding van aardappel">
+        <img src="aardappel.jpeg" alt="afbeelding van aardappel"/>
       </figure>
     </div>
 
-    <div id="aardappelinfo">{{beschrijvingPlantsoort}}
-
-
-
-    </div>
+    <div id="groenteinfo">{{beschrijvingPlantsoort}}</div>
   </script>
 
+  <script>
+    function geefDetail(id){
+        $.getJSON('/api/plantensoort/'.concat(id), function (plantensoort) {
+            var $main = $("#mainBodyContent").empty();
+
+            var source   = $("#groentedetail-template").html();
+            var template = Handlebars.compile(source);
+            let output = template({plantensoort});
+            $main.html(output);
+        });
+      }
+  </script>
 
   <!-- Script voor Groentedetail-->
   <script id="groentedetail" type="text/x-handlebars-template">
@@ -75,7 +71,7 @@
       <li>
         <div class="imgwrap">
 
-            <img src="aardappel.jpeg" alt="afbeelding van aardappels">
+            <img src="aardappel.jpeg" alt="afbeelding van aardappels"/>
             <span class="imgmask"></span>
         </div>
         <a href="#">
