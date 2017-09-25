@@ -5,6 +5,7 @@
   <title>Groentenzoeker</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
@@ -23,9 +24,10 @@
       {{#each plantensoorten}}
         <li>
           <p>{{naamSoort}}</p>
-          <div class="imgwrap">
-              <img src={{afbeelding}}  alt="afbeelding van groente" onclick="geefDetail({{id}})"/>
-              <span class="imgmask"></span>
+          <div class="container">
+              <img src={{afbeelding}}  alt="afbeelding van groente" onclick="geefDetail({{id}})" id="afbeeldingGroentenlijst"/>
+                <div class="overlay"></div>
+                <div class="text">klik voor meer details</div>
           </div>
 
         </li>
@@ -47,12 +49,12 @@
       <div id="groenteinfo">{{beschrijvingPlantsoort}}</div>
     </div>
 
-    <div>
+
 
       <figure>
         <img src={{afbeelding}}/>
       </figure>
-    </div>
+
 
 
   </script>
@@ -160,6 +162,10 @@
 </body>
 
 <footer>
+
+  <div class="signature">
+    <p>Made with <i style="font-size:24px;color:green" class="fafa-envira"></i> by Prema</p>
   <!-- <span>Made <i class='fa fa-code'></i> by <a href= www.lapremavera.be>Prema</a></span>-->
+  </div>
 </footer>
 </html>

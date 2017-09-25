@@ -520,8 +520,8 @@ a {
 }
 
 .gallery {
-  list-style: none;
-  margin: 0 auto;
+   margin: 5 auto;
+  border:0;
   text-align: center;
   width: 100%;
 }
@@ -654,7 +654,16 @@ a {
   opacity: 1;
   transition: all .25s ease-out;
 }
+*/
+#afbeeldingGroentenlijst:hover {
+   opacity: 0.5;
 
+}
+img {
+    padding: 1.5%;
+    max-width:500px;
+
+}
 
 footer {
   font-size: 14.5px;
@@ -662,14 +671,14 @@ footer {
 }
 
 .signature p{
-    padding:2cm;
+    padding:2%;
 	text-align: center;
 	font-family: Helvetica, Arial, Sans-Serif;
 	font-size: 0.85em;
 	color: #AAAAAA;
 }
 
-.signature .much-heart{
+.signature .fafa-envira{
 	display: inline-block;
 	position: relative;
 	margin: 0 4px;
@@ -682,8 +691,8 @@ footer {
     transform: rotate(45deg);
 }
 
-.signature .much-heart::before,
-.signature .much-heart::after {
+.signature .fafa-envira::before,
+.signature .fafa-envira::after {
 	  display: block;
   content: '';
   position: absolute;
@@ -695,7 +704,7 @@ footer {
   top: -4px;
 }
 
-.signature .much-heart::after {
+.signature .fafa-envira::after {
 	bottom: 0;
 	top: auto;
 	left: -4px;
