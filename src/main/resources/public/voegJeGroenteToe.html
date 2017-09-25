@@ -24,87 +24,53 @@
     <div class="card"></div>
     <div class="card">
 
+        <!--Dit is een ander formulier-->
+        <div class="groententcontainer">
 
 
-        </form>
+            <form id="groenteInvulformulier">
+                <div class="form-group">
+                    <label for="plantennaam">Naam Plant:</label>
+                    <input class="form-control" id="plantennaam" name="plantennaam"/>
+                </div>
+                <div class="form-group">
+                    <label for="latijnse naam">Latijnse naam:</label>
+                    <input class="form-control" id="latijnse naam" name="latijnse naam"/>
+                </div>
+                <div class="form-group">
+                    <label for="klimaat">Klimaat:</label>
+                    <input class="form-control" id="klimaat" name="klimaat"/>
+                </div>
+                <div class="form-group">
+                    <label>Grondsoort:</label>
+                    <div class="checkbox-container">
 
+                        <label class="checkbox-inline">
+                            <input type="checkbox" value="">Leem</label>
+                            <input type="checkbox" value="">Zandleem</label>
+                            <input type="checkbox" value="">Zand</label>
+                    </div>
 
+                    <div class="input-container">
+                        <input type="#{type}" id="info"/>
+                        <label for="comment">Een beetje info</label>
+                        <textarea name="textarea" rows="15" cols="50" id="comment" placeholder="bv. Een blaadje peterselie doet het altijd goed tussen de tanden. "></textarea>
 
+                    </div>
+                </div>
+            </form>
 
             <div class="button-container">
-                <button type="submit"><span>Voeg toe!</span></button>
-            </div>
+            <button type="submit"><span>Voeg toe!</span></button>
+        </div>
+
     </div>
-
-        <!--Dit is een ander formulier-->
-    <div class="groententcontainer">
-
-
-        <form id="groenteInvulformulier">
-            <div class="form-group">
-                <label for="plantennaam">Naam Plant:</label>
-                <input class="form-control" id="plantennaam" name="plantennaam"/>
-            </div>
-            <div class="form-group">
-                <label for="latijnse naam">Latijnse naam:</label>
-                <input class="form-control" id="latijnse naam" name="latijnse naam"/>
-            </div>
-            <div class="form-group">
-                <label for="klimaat">Klimaat:</label>
-                <input class="form-control" id="klimaat" name="klimaat"/>
-            </div>
-            <div class="form-group">
-                <label for="grondsoort">Grondsoort:</label>
-                <input class="form-control" id="grondsoort" name="grondsoort"/>
-            </div>
-            <div class="form-group">
-                <label for="afbeelding">Afbeelding:</label>
-                <input class="form-control" id="afbeelding" name="afbeelding"/>
-            </div>
-            <div class="form-group">
-                <label for="action">Action:</label>
-                <input class="form-control" id="action" name="action"/>
-            </div>
-            <input type="submit" class="btn btn-primary" value="Create">
-        </form>
 
 
     <script  src="js/voegJeGroenteToe.js"></script>
 
 </div>
-    <form id="groenten-zoek-form">
-        <div class="input-container">
-            <input type="#{type}" id="label" required="required"/>
-            <label for=label> Naam groente</label>
-            <div class="bar"></div>
-        </div>
-        <div class="input-container">
-            <input type="#{type}" id="name"/>
-            <label for="name">Latijnse naam</label>
-            <div class="bar"></div>
-        </div>
-        <div class="input-container">
-            <input type="#{type}" id="groeivoorwaarden"/>
-        </div>
-        <div class="checkbox-container">
-            <label for="groeivoorwaarden">Groeivoorwaarden<br>Grondsoort</label>
-            <label class="checkbox-inline">
-                <input type="checkbox" value="">Leem</label>
-            <input type="checkbox" value="">Zandleem</label>
-            <input type="checkbox" value="">Zand</label>
 
-            <div class="input-container">
-                <input type="#{type}" id="info"/>
-                <label for="comment">Een beetje info</label>
-                <textarea class="form-control" rows="15" id="comment"></textarea>
-                <div class="bar"></div>
-            </div>
-        </div>
-
-
-
-
-        <div class="bar"></div>
     </form>
 </div>
 
@@ -112,7 +78,7 @@
 
 <footer>
     <div class="signature">
-        <p>Made with <i class="much-heart"></i> by Prema</p>
+        <p>Made with <i class="fafa-envira"></i> by Prema</p>
     </div>
 </footer>
 </html>
