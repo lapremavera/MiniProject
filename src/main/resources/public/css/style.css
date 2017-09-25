@@ -31,11 +31,11 @@ body {
 }
 
 /* Zoek opnieuw */
-.rerun {
+.rerun, .meer {
   margin: 0 0 30px;
   text-align: center;
 }
-.rerun a {
+.rerun a , .meer a {
   cursor: pointer;
   display: inline-block;
   background: #2eb8b8;
@@ -47,7 +47,7 @@ body {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-.rerun a:hover {
+.rerun a:hover , .meer a:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -516,14 +516,16 @@ a {
 }
 .content img {
   width: 100%;
+  height: auto;
 }
 
 .gallery {
+  list-style: none;
   margin: 0 auto;
   text-align: center;
   width: 100%;
 }
-/*.gallery li {
+.gallery li {
   width: 21.73913%;
   float: left;
   text-align: center;
@@ -617,8 +619,8 @@ a {
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
-.gallery li .imgmask {
-  background: #e9e9e9 url("artichaud_ombre.png") 50%/25px;
+/*.gallery li .imgmask {
+  background: #e9e9e9 image("artichaud_ombre.png") 50%/25px;
   background-repeat: repeat-y;
   position: absolute;
   top: 0;
@@ -630,7 +632,7 @@ a {
   vertical-align: bottom;
   text-align: center;
   transition: all .25s ease-out;
-}
+}*/
 .gallery li img {
   width: 100%;
   vertical-align: top;
@@ -645,19 +647,22 @@ a {
   opacity: 0;
   transition: all .25s ease-out;
 }
+
 .gallery li:hover .imgmask {
-  background: #e9e9e9 url("artichaud_ombre.png) 50%/85px;
+  background: #e9e9e9 image("artichaud_ombre.png) 50%/85px;
   background-repeat: repeat-y;
   opacity: 1;
   transition: all .25s ease-out;
 }
-*/
+
+
 footer {
   font-size: 14.5px;
   text-transform: uppercase;
 }
 
 .signature p{
+    padding:2cm;
 	text-align: center;
 	font-family: Helvetica, Arial, Sans-Serif;
 	font-size: 0.85em;

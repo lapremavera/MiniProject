@@ -36,20 +36,14 @@
                 <div class="bar"></div>
             </div>
             <div class="input-container">
-                <p>Groeivoorwaarden</p>
-
-                <p>Grondsoort</p>
+                <input type="#{type}" id="groeivoorwaarden"/>
             </div>
-            <div>
+            <div class="checkbox-container">
+                <label for="groeivoorwaarden">Groeivoorwaarden<br>Grondsoort</label>
                 <label class="checkbox-inline">
                     <input type="checkbox" value="">Leem</label>
-                    <input type="checkbox" value="">Zandleem</label>
-                    <input type="checkbox" value="">Zand</label>
-            </div>
-            <div class="bar"></div>
-
-        </form>
-
+                <input type="checkbox" value="">Zandleem</label>
+                <input type="checkbox" value="">Zand</label>
 
                 <div class="input-container">
                     <input type="#{type}" id="info"/>
@@ -57,11 +51,18 @@
                     <textarea class="form-control" rows="15" id="comment"></textarea>
                     <div class="bar"></div>
                 </div>
+            </div>
 
-            <div class checkbox></div>
-            <form>
+
+
+
+            <div class="bar"></div>
 
         </form>
+
+
+
+
             <div class="button-container">
                 <button type="submit"><span>Voeg toe!</span></button>
             </div>
@@ -99,42 +100,10 @@
             <input type="submit" class="btn btn-primary" value="Create">
         </form>
 
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Naam plant</th>
-                <th>Latijnse naam</th>
-                <th>Klimaat</th>
-                <th>Grondsoort</th>
-                <th>Afbeelding</th>
-                <th>actions</th>
-            </tr>
-            </thead>
-
-            <tbody id="plantensoortLijstData">
-            <tr>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-            </tr>
-            <tr>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-            </tr>
-            </tbody>
-        </table>
-
-
-    </div>
 
     <script  src="js/voegJeGroenteToe.js"></script>
 
-
-
-
+</div>
 </div>
 
 </body>

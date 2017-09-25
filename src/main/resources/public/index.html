@@ -22,11 +22,12 @@
     <ul class="gallery">
       {{#each plantensoorten}}
         <li>
+          <p>{{naamSoort}}</p>
           <div class="imgwrap">
-              <img src="aardappel.jpeg"  alt="afbeelding van aardappels" onclick="geefDetail({{id}})"/>
+              <img src={{afbeelding}}  alt="afbeelding van groente" onclick="geefDetail({{id}})"/>
               <span class="imgmask"></span>
           </div>
-            <h2>{{naamSoort}}</h2>
+
         </li>
       {{/each}}
     </ul>
@@ -38,11 +39,12 @@
     <div class="groentenzoekerTitle">
 
       <h1>{{naamSoort}}</h1>
-      <p>{{naamLatijn}}</p>
-      <p>{{oogsttijd}}</p>
+      <p>Wetenschappelijke naam: {{naamLatijn}}</p>
+      <p>Oogsttijd: {{oogsttijd}}</p>
 
       <hr>
-
+      <!--<div class="meer" onclick="meer({{id}})"><a href="">Meer!</a></div>-->
+      <div id="groenteinfo">{{beschrijvingPlantsoort}}</div>
     </div>
 
     <div>
@@ -52,7 +54,7 @@
       </figure>
     </div>
 
-    <div id="groenteinfo">{{beschrijvingPlantsoort}}</div>
+
   </script>
 
   <script>
@@ -68,29 +70,41 @@
       }
   </script>
 
-  <!-- Script voor Groentedetail-->
-  <script id="groentedetail" type="text/x-handlebars-template">
-    <ul class="gallery">
-      <li>
-        <div class="imgwrap">
+  <!--<script id="groentemeer-template" type="text/x-handlebars-template">-->
+    <!--<div class="groentenzoekerTitle">-->
 
-            <img src="aardappel.jpeg" alt="afbeelding van aardappels"/>
-            <span class="imgmask"></span>
-        </div>
-        <a href="#">
-          <h2>{{naamSoort}}</h2>
-          <p>{{naamLatijn}}</p>
-          <p>{{maxHoogte}}</p>
-          <p>{{duurTotPluk}}</p>
-          <p>{{oogsttijd}}</p>
-          <p>{{beschrijvingPlantsoort}}</p>
-          <p>{{plantAfstand}}</p>
-          <p>{{groeiVoorwaarden}}</p>
+      <!--<h1>{{naamSoort}}</h1>-->
+      <!--<p>Wetenschappelijke naam: {{naamLatijn}}</p>-->
+      <!--<p>Oogsttijd: {{oogsttijd}}</p>-->
+      <!--<p>nog meer info</p>-->
 
-        </a>
-      </li>
-         </ul>
-  </script>
+      <!--<hr>-->
+      <!--<div class="meer" onclick="meer({{id}})"><a href="">Meer!</a></div>-->
+
+    <!--</div>-->
+
+    <!--<div>-->
+
+      <!--<figure>-->
+        <!--<img src={{afbeelding}}/>-->
+      <!--</figure>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;<div id="groenteinfo">{{beschrijvingPlantsoort}}</div>&ndash;&gt;-->
+  <!--</script>-->
+
+  <!--<script>-->
+    <!--function meer(id) {-->
+      <!--$.getJSON('/api/plantensoort/'.concat(id), function (plantensoort) {-->
+        <!--var $main = $("#mainBodyContent").empty();-->
+
+        <!--var source = $("groentemeer-template").html();-->
+        <!--var template = Handlebars.compile(source);-->
+        <!--let output= template({plantensoort});-->
+        <!--$main.html(output);-->
+        <!--});-->
+        <!--}-->
+  <!--</script>-->
 
 </head>
 
@@ -101,7 +115,7 @@
 <div class="groentenzoekerTitle">
   <h1>Groentenzoeker</h1>
   <p>Welke groenten groeien het beste in mijn tuintje?</p>
- <!-- <span>Made <i class='fa fa-code'></i> by <a href= www.lapremavera.be>Prema</a></span>-->
+
 </div>
 
 <div class="rerun"><a href="">Zoek opnieuw</a></div>
@@ -144,4 +158,8 @@
 </div>
 
 </body>
+
+<footer>
+  <!-- <span>Made <i class='fa fa-code'></i> by <a href= www.lapremavera.be>Prema</a></span>-->
+</footer>
 </html>
