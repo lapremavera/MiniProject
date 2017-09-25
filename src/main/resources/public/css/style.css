@@ -678,7 +678,7 @@ footer {
 	color: #AAAAAA;
 }
 
-.signature .fafa-envira{
+.signature .fa fa-envira{
 	display: inline-block;
 	position: relative;
 	margin: 0 4px;
@@ -691,8 +691,8 @@ footer {
     transform: rotate(45deg);
 }
 
-.signature .fafa-envira::before,
-.signature .fafa-envira::after {
+.signature .fa fa-envira::before,
+.signature .fa fa-envira::after {
 	  display: block;
   content: '';
   position: absolute;
@@ -704,7 +704,7 @@ footer {
   top: -4px;
 }
 
-.signature .fafa-envira::after {
+.signature .fa fa-envira::after {
 	bottom: 0;
 	top: auto;
 	left: -4px;
