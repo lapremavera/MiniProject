@@ -108,6 +108,13 @@ public class Plantensoort {
     public Plantensoort() {
     }
 
+    public Plantensoort(String naamSoort, String naamLatijn, String beschrijvingPlantsoort, String groeiVoorwaarden) {
+        this.naamSoort = naamSoort;
+        this.naamLatijn = naamLatijn;
+        this.beschrijvingPlantsoort = beschrijvingPlantsoort;
+        this.groeiVoorwaarden = groeiVoorwaarden;
+    }
+
     public Plantensoort(String naamSoort) {
         this.naamSoort = naamSoort;
     }

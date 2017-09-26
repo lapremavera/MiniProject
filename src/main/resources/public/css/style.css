@@ -52,7 +52,7 @@ body {
 }
 
 /* Scroll To Bottom */
-#groentenlijst, #toevoegen {
+#home, #toevoegen {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -66,14 +66,14 @@ body {
   color: #ffffff;
   text-align: center;
 }
-#groentenlijst i, #toevoegen i {
+#groentenlijst i, #home i {
   line-height: 56px;
 }
-#groentenlijst:hover, #toevoegen:hover {
+#home:hover, #toevoegen:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-/* CodePen */
+/* blaadje fafa envira */
 #toevoegen {
   bottom: 96px;
   right: 36px;
@@ -86,6 +86,8 @@ body {
 #toevoegen i {
   line-height: 44px;
 }
+
+
 
 /* Container */
 .container {
@@ -429,6 +431,23 @@ body {
   display: none;
 }
 
+/*invulformulier groente*/
+
+/*.form-group {
+
+    width: 200px;
+    float: left;
+
+}
+
+label {
+    width: 20%;
+    text-align: right;
+
+
+}*/
+
+
 /* Keyframes */
 @-webkit-keyframes buttonFadeInUp {
   0% {
@@ -445,8 +464,24 @@ body {
 
 h2 {
   color: #666666;
-  font-weight: 600;
+  font-weight: 900;
+  font-size: 150%;
   text-decoration: none;
+}
+
+#bedankt {
+
+  position: relative;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 60px 0 40px 0;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+    width: 60%;
+    margin: auto;
+
 }
 
 .groentennaam {
@@ -655,7 +690,7 @@ a {
   transition: all .25s ease-out;
 }
 */
-#afbeeldingGroentenlijst:hover {
+#afbeeldingGroente:hover {
    opacity: 0.5;
 
 }
@@ -714,5 +749,10 @@ footer {
 	color: #AAAAAA;
 	text-decoration: none;
 	font-weight: bold;
+}
+
+#home {
+    color: green;
+
 }
 

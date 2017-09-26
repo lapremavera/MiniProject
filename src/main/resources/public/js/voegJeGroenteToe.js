@@ -1,8 +1,6 @@
-$("groenteInvulformulier").submit(function(e) {
+$("#groenteInvulformulier").submit(function(e) {
     e.preventDefault();
 
-
-    document.writeline("Gelukt");
 
                 let groente = {
                     naamSoort: $(this.plantennaam).val(),
@@ -20,12 +18,13 @@ $("groenteInvulformulier").submit(function(e) {
                     processData: false,
                     success: function() {
                         // Refresh data table
-                      //  loadGroentenlijst();
+                      //loadGroentenlijst();
 
                     }
                 });
 
                 this.reset();
+                window.location.href="feedback.html";
             });
 
            // loadGroentenlijst();
